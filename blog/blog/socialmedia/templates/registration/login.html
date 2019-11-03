@@ -8,12 +8,11 @@
         <div class="form-logo">
             <p class="text-center"><img src="{% static 'img/logo.png'%}" alt="logo"></p>
         </div>
-        <form>
-            <input type="text" class="form-control" placeholder="Username">
-            <input type="password" class="form-control" placeholder="Password">
-            <input type="checkbox"> Save Password
-            <input type="submit" class="btn btn-social" value="LOGIN">
-        </form>
+        <form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="btn btn-social">Login</button>
+</form>
         <a href="#" class="login-action" title="Forgot password">
             <p>Forgot your password?</p>
         </a>
