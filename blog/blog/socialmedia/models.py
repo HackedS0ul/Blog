@@ -7,10 +7,7 @@ class Post(models.Model):
     created = models.DateTimeField(auto_now_add=True)
 
 
-class Signup(models.Model):
-    username = models.ForeignKey(User, on_delete=models.CASCADE)
-    lastname = models.CharField(max_length=20)
-    email = models.EmailField()
+    
     
 
 

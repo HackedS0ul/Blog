@@ -1,5 +1,9 @@
 from django.shortcuts import render
+from django.contrib.auth.forms import UserCreationForm
+from django.urls import reverse_lazy
+from django.views import generic
 from .models import Post
+
 
 
 
@@ -10,7 +14,9 @@ def home(request):
     }
     return render(request, 'wall.html', context)
 
-def userRegister(request):
-    return render(request, 'signin.html')
+class SignUp(generic.CreateView):
+    form_class = UserCreationForm
+    success_url = reverse_lazy('login')
+    template_name = 'signin.html'
 
 

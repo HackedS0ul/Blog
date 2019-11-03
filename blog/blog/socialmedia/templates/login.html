@@ -2,22 +2,25 @@
 {% load static %}
 {% block content %}
 
-
 <body id="login-page">
 
     <div class="form-box">
         <div class="form-logo">
             <p class="text-center"><img src="{% static 'img/logo.png'%}" alt="logo"></p>
         </div>
-        <form method="post">
-         {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="btn btn-social">Sign up</button>
+        <form>
+            <input type="text" class="form-control" placeholder="Username">
+            <input type="password" class="form-control" placeholder="Password">
+            <input type="checkbox"> Save Password
+            <input type="submit" class="btn btn-social" value="LOGIN">
         </form>
-        <a href="login.html" class="login-action" title="login">
-            <p>Have an account?</p>
+        <a href="#" class="login-action" title="Forgot password">
+            <p>Forgot your password?</p>
         </a>
-    </div><!--close form-box-->
+        <a href="signin.html" class="login-action" title="Signi in">
+            <p>New User?</p>
+        </a>
+    </div><!--Close form-box-->
 
     <footer class="login-footer text-center">
         <div class="col-xs-3">
@@ -33,5 +36,5 @@
             <a class="login-action" href="" title="careers">CAREERS</a>
         </div>
     </footer>
-{% endblock  %}
 
+{% endblock %}
